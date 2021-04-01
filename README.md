@@ -1,0 +1,1 @@
+A simple implementation of "rock paper scissors". Exercise for the Odin Project, JS Foundations. 

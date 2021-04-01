@@ -1,0 +1,59 @@
+<!-- First version of rockPaperScissors function for my first Odin project. -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    function computerPlay() {
+      const result = ['Rock', 'Paper', 'Scissors'];
+      const num = Math.floor((Math.random() * result.length));
+      return result[num];
+    }//end computerPlay
+
+    //console.log("The computerPlay function chooses: " + computerPlay());
+
+    function rockPaperScissors(playerSelection, computerSelection){
+      computerSelection = computerPlay();
+      computerLower = computerSelection.toLowerCase();
+      playerLower = playerSelection.toLowerCase()
+      let reply = "";
+      if (playerLower === computerLower) {
+        return `The computer chose "${computerSelection}" and the player chose "${playerSelection}". It's a tie!!!!`;
+      } else if (playerLower === 'rock') {
+        if (computerLower === 'paper') {
+          reply = `Womp womp. You lose.`;
+        } else {
+          reply = `You win!!!!`;
+        }//end else
+      } else if (playerLower === 'scissors') {
+        if (computerLower === 'paper') {
+          reply = `You win!!!!`;
+        } else {
+          reply = `Womp womp. You lose.`;
+        }//end else
+      } else if (playerLower === 'paper') {
+        if (computerLower === 'rock') {
+          reply = `You win!!!!`;
+        } else {
+          reply = `Womp womp. You lose.`;
+        }//end else
+      } else {
+        return `Sorry. "${playerSelection}" is not a valid input.`
+      }
+      return `The computer chose "${computerSelection}" and the player chose "${playerSelection}". ` + reply;
+    }//end rockPaperScissors
+
+    console.log(rockPaperScissors('ROCK'));
+    console.log(rockPaperScissors('Scissors'));
+    console.log(rockPaperScissors('paper'));
+    console.log(rockPaperScissors('Paper'));
+    console.log(rockPaperScissors('scissors'));
+    console.log(rockPaperScissors('fart'));
+
+
+  </script>
+</body>
+</html>
