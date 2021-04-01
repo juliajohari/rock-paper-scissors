@@ -1,4 +1,4 @@
-<!-- First version of rockPaperScissors function for my first Odin project. -->
+<!-- V2: Added the user prompt window. -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,9 +16,10 @@
     //console.log("The computerPlay function chooses: " + computerPlay());
 
     function rockPaperScissors(playerSelection, computerSelection){
+      playerSelection = window.prompt("Rock, Paper, or Scissors?");
       computerSelection = computerPlay();
       computerLower = computerSelection.toLowerCase();
-      playerLower = playerSelection.toLowerCase()
+      playerLower = playerSelection.toLowerCase();
       let reply = "";
       if (playerLower === computerLower) {
         return `The computer chose "${computerSelection}" and the player chose "${playerSelection}". It's a tie!!!!`;
@@ -46,12 +47,14 @@
       return `The computer chose "${computerSelection}" and the player chose "${playerSelection}". ` + reply;
     }//end rockPaperScissors
 
-    console.log(rockPaperScissors('ROCK'));
-    console.log(rockPaperScissors('Scissors'));
-    console.log(rockPaperScissors('paper'));
-    console.log(rockPaperScissors('Paper'));
-    console.log(rockPaperScissors('scissors'));
-    console.log(rockPaperScissors('fart'));
+    console.log(rockPaperScissors());
+
+  //  console.log(rockPaperScissors('ROCK'));
+  //   console.log(rockPaperScissors('Scissors'));
+  //   console.log(rockPaperScissors('paper'));
+  //   console.log(rockPaperScissors('Paper'));
+  //   console.log(rockPaperScissors('scissors'));
+  //   console.log(rockPaperScissors('fart'));?
 
 
   </script>
